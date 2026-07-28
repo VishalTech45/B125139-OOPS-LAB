@@ -4,7 +4,6 @@ struct Employee{
     int Employee_id ;
     char name[50];
     float salary ;
-
 };
 
 int max_salary( struct Employee emp[], int n){
@@ -39,5 +38,7 @@ int main(){
         printf("Employee Id :%d\n",emp[p].Employee_id);      
         printf("Name:%s\n",emp[p].name) ;      
         printf("Salary:%.2f",emp[p].salary);
+
+    return 0 ;    
     
 }
