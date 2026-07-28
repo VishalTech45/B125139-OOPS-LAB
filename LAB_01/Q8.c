@@ -7,6 +7,17 @@ struct Employee{
 
 };
 
+int max_salary( struct Employee emp[], int n){
+    int maxi = 0 , t =0 ;
+  for( int i =0 ; i < n;i++){
+       if(emp[i].salary >maxi){
+        maxi =emp[i].salary ;
+        t=i ;
+       }      
+   }
+   return t ;
+}
+
 int main(){
     int n ;
     printf("Enter Number of Employee: ");
@@ -23,11 +34,10 @@ int main(){
         printf("Enter Salary :");
         scanf("%f",&emp[i].salary) ;
     }
-    for(int i= 0; i < n ;i++){
-        printf("\n======================\n");
-        printf("Details of Employee [%d]\n",i+1) ;
-        printf("Employee Id :%d\n",emp[i].Employee_id);      
-        printf("Name:%s\n",emp[i].name) ;      
-        printf("Salary:%.2f",emp[i].salary);
-    }
+     
+      int p = max_salary(emp, n) ; 
+        printf("Employee Id :%d\n",emp[p].Employee_id);      
+        printf("Name:%s\n",emp[p].name) ;      
+        printf("Salary:%.2f",emp[p].salary);
+    
 }
