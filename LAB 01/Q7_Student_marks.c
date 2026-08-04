@@ -31,4 +31,6 @@ int main(){
     printf("Total marks:%.2f\n" , s1.total) ;
     printf("Average : %.2f ",s1.total/3) ;
 
+    return 0;
+
 }

@@ -8,7 +8,7 @@ struct  Students
     float cgpa ;
 };
 
-void  max_cpga(struct Students stu[] ,int n){
+void  max_cgpa(struct Students stu[] ,int n){
     for(int i = 0 ; i < n ; i++){
         if(stu[i].cgpa > 8.0){
         printf("\n==================\n");    
@@ -37,6 +37,7 @@ int main(){
         scanf("%f",&stu[i].cgpa) ;
     }
    
-   max_cpga(stu,n);
+   max_cgpa(stu,n);
+   return 0;
  
 }
