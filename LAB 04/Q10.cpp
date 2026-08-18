@@ -1,16 +1,3 @@
-// Smart Home Device
-// Create a class named SmartDevice containing the following private data members:
-// • Device Name
-// • Device Type
-// • Power Status
-// Create a class named HomeController and declare it as a friend class of SmartDevice.
-// The HomeController class should provide member functions to:
-// 1. Display device information.
-// 2. Turn the device ON.
-// 3. Turn the device OFF.
-// 4. Display the current power status.
-// Hint: Since HomeController is a friend class, its member functions can directly access and
-// modify the private members of SmartDevice.
 
 #include <iostream>
 #include <string>

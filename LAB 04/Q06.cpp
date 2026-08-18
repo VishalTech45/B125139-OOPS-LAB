@@ -1,15 +1,4 @@
-// Smart Door Lock
-// Create two classes, Door and SecuritySystem.
-// The Door class should contain the following private data members:
-// • Door Number
-// • Lock Status
-// The SecuritySystem class should contain a member function that checks the lock status
-// of a Door object.
-// Declare SecuritySystem as a friend class of Door.
-// The program should display whether the door is “Locked” or “Unlocked”.
-// Hint: Since SecuritySystem is a friend class, its member functions can directly access the private
-// members of Door.
-
+ 
 #include<iostream>
 #include<string>
 using namespace std ;

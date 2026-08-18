@@ -1,12 +1,3 @@
-//  Music Playlist
-// Create a class named Song containing the following private data members:
-// • Song Name
-// • Artist Name
-// • Duration
-// Create two Song objects. Write a friend function named compareSongs() that compares
-// the duration of the two songs and displays which song is longer. If both songs have the
-// same duration, display an appropriate message.
-// Hint: The friend function should receive both Song objects as arguments
 
 #include <iostream>
 #include <string>

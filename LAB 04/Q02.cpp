@@ -1,14 +1,3 @@
-// Mobile Phone Settings
-// Create a class named Mobile containing the following private data members:
-// • Brand
-// • Model
-// • Battery Percentage
-// Write a friend function named checkBattery() that accesses the private battery percent-
-// age and displays:
-// • “Battery Low” if the battery percentage is below 20%.
-// • “Battery Normal” otherwise.
-// The function should also display the mobile details.
-// Hint: The friend function can directly access the private members of the Mobile class.
 
 #include <iostream>
 #include <string>

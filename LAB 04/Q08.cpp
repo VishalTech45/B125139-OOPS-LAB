@@ -1,14 +1,3 @@
-// Train Seat Status
-// Create a class named TrainSeat containing the following private data members:
-// • Seat Number
-// • Passenger Name
-// • Booking Status
-// Create a class named TicketChecker and declare it as a friend class of TrainSeat.
-// The TicketChecker class should:
-// 1. Display the seat details.
-// 2. Check whether the seat is booked or available.
-// 3. Display the passenger name if the seat is booked.
-// Hint: The friend class can directly access the private members of TrainSeat.
 
 #include <iostream>
 #include <string>

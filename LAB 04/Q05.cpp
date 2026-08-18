@@ -1,13 +1,3 @@
-//  Food Order
-// Create a class named FoodOrder containing the following private data members:
-// • Order ID
-// • Food Item
-// • Quantity
-// • Price
-// Write a friend function named calculateBill() that accesses the private members and
-// calculates the total bill.
-// Display the complete order details along with the total bill.
-// Hint: Total Bill = Quantity ×Price.
 
 #include <iostream>
 #include <string>

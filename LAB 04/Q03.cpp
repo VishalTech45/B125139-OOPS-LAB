@@ -1,12 +1,3 @@
-// Parking Slot
-// Create a class named ParkingSlot containing the following private data members:
-// • Slot Number
-// • Vehicle Number
-// • Occupancy Status
-// Write a friend function named checkSlot() that accesses the private members and dis-
-// plays whether the parking slot is occupied or available. If the slot is occupied, display the
-// vehicle number as well.
-// Hint: Use a suitable Boolean variable to represent whether the slot is occupied
 
 #include <iostream>
 #include <string>

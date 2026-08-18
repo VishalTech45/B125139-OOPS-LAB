@@ -3,13 +3,13 @@
 using namespace std;
 
 
-class Dairy{
+class Diary{
     string name;
     int no_of_entries;
     string  last_entries;
     public:
      void get_details(){
-        cout<<"Enter the name of the dairy: ";
+        cout<<"Enter the name of the diary: ";
         getline(cin,name);
         cout<<"Enter the number of entries: ";
         cin>>no_of_entries;
@@ -18,24 +18,24 @@ class Dairy{
          getline(cin, last_entries); // To consume the newline character after reading no_of_entries
      }
      // FREIND FUNCTION DECLARATION
-     friend void displayDairy(const  Dairy dairy);
+     friend void displayDiary(const  Diary &diary);
       
 
 };
 
- void displayDairy(const  Dairy dairy){
+ void displayDiary(const  Diary &diary){
 
-    cout<<"\nDetails of the dairy: "<<endl;
-    cout<<"Name of the dairy: "<<dairy.name<<endl;
-    cout<<"Number of entries: "<<dairy.no_of_entries<<endl;
-    cout<<"Last entries: "<<dairy.last_entries <<endl;
+    cout<<"\nDetails of the diary: "<<endl;
+    cout<<"Name of the diary: "<<diary.name<<endl;
+    cout<<"Number of entries: "<<diary.no_of_entries<<endl;
+    cout<<"Last entries: "<<diary.last_entries <<endl;
       
  }
 
 int main(){
-    Dairy dairy;
-    dairy.get_details();
-    displayDairy(dairy);
+    Diary diary;
+    diary.get_details();
+    displayDiary(diary);
     
     return 0;
 }

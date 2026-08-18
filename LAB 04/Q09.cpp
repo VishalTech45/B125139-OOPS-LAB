@@ -1,17 +1,3 @@
-// Online Exam Result
-// Create a class named Exam containing the following private data members:
-// • Student Name
-// • Subject
-// • Marks
-// • Maximum Marks
-// Create a class named Result and declare it as a friend class of Exam.
-// The Result class should:
-// 1. Access the private members of Exam.
-// 2. Calculate the percentage.
-// 3. Display “Pass” if the percentage is 40% or above; otherwise display “Fail”.
-// 4. Display the complete result.
-// Hint: Percentage = Marks
-// Maximum Marks ×100
 
 #include <iostream>
 #include <string>
