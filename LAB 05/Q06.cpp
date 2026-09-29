@@ -1,89 +1,90 @@
 #include <iostream>
 #include <iomanip>
 #include<string>
+using namespace std;
 
 // 1. Display single integer
 void display(int val) {
-    std::cout << "Integer value: " << val << "\n";
+    cout << "Integer value: " << val << "\n";
 }
 
 // 2. Display single floating-point number
 void display(double val) {
-    std::cout << "Floating-point value: " << std::fixed << std::setprecision(2) << val << "\n";
+    cout << "Floating-point value: " << fixed << setprecision(2) << val << "\n";
 }
 
 // 3. Display single character
-void display(std::string val) {
-    std::cout << "Character value: " << val << "\n";
+void display(string val) {
+    cout << "Character value: " << val << "\n";
 }
 
 // 4. Display all elements of an integer array
 void display(const int arr[], int size) {
-    std::cout << "Integer array elements: [ ";
+    cout << "Integer array elements: [ ";
     for (int i = 0; i < size; ++i) {
-        std::cout << arr[i] << (i < size - 1 ? ", " : " ");
+        cout << arr[i] << (i < size - 1 ? ", " : " ");
     }
-    std::cout << "]\n";
+    cout << "]\n";
 }
 
 // 5. Display all elements of a character array
-void display(const std::string arr[], int size) {
-    std::cout << "Character array elements: [ ";
+void display(const string arr[], int size) {
+    cout << "Character array elements: [ ";
     for (int i = 0; i < size; ++i) {
-        std::cout << arr[i] << (i < size - 1 ? ", " : " ");
+        cout << arr[i] << (i < size - 1 ? ", " : " ");
     }
-    std::cout << "]\n";
+    cout << "]\n";
 }
 
 int main() {
     // --- 1. DISPLAY INTEGER ---
     int intVal;
-    std::cout << "--- Single Integer ---\n";
-    std::cout << "Enter an integer: ";
-    std::cin >> intVal;
+    cout << "--- Single Integer ---\n";
+    cout << "Enter an integer: ";
+    cin >> intVal;
     display(intVal);
-    std::cout << "\n";
+    cout << "\n";
 
     // --- 2. DISPLAY FLOATING-POINT NUMBER ---
     double floatVal;
-    std::cout << "--- Single Floating-Point ---\n";
-    std::cout << "Enter a decimal number: ";
-    std::cin >> floatVal;
+    cout << "--- Single Floating-Point ---\n";
+    cout << "Enter a decimal number: ";
+    cin >> floatVal;
     display(floatVal);
-    std::cout << "\n";
+    cout << "\n";
 
     // --- 3. DISPLAY CHARACTER ---
-    std::string charVal;
-    std::cout << "--- Single Character ---\n";
-    std::cout << "Enter a single character: ";
-    std::cin >> charVal;
+    string charVal;
+    cout << "--- Single Character ---\n";
+    cout << "Enter a single character: ";
+    cin >> charVal;
     display(charVal);
-    std::cout << "\n";
+    cout << "\n";
 
     // --- 4. DISPLAY INTEGER ARRAY ---
     int intSize;
-    std::cout << "--- Integer Array ---\n";
-    std::cout << "Enter the size of the integer array: ";
-    std::cin >> intSize;
+    cout << "--- Integer Array ---\n";
+    cout << "Enter the size of the integer array: ";
+    cin >> intSize;
 
     int intArray[intSize];
-    std::cout << "Enter " << intSize << " integers: ";
+    cout << "Enter " << intSize << " integers: ";
     for (int i = 0; i < intSize; ++i) {
-        std::cin >> intArray[i];
+        cin >> intArray[i];
     }
     display(intArray, intSize);
-    std::cout << "\n";
+    cout << "\n";
 
     // --- 5. DISPLAY CHARACTER ARRAY ---
     int charSize;
-    std::cout << "--- Character Array ---\n";
-    std::cout << "Enter the size of the character array: ";
-    std::cin >> charSize;
+    cout << "--- Character Array ---\n";
+    cout << "Enter the size of the character array: ";
+    cin >> charSize;
 
-    std::string charArray[charSize];
-    std::cout << "Enter " << charSize << " characters: ";
+    string charArray[charSize];
+    cout << "Enter " << charSize << " characters: ";
     for (int i = 0; i < charSize; ++i) {
-        std::cin >> charArray[i];
+        cin >> charArray[i];
     }
     display(charArray, charSize);
 

@@ -1,40 +1,44 @@
-// Cinema Seat Update
-// A cinema stores 8 seat numbers in an array.
-// Write a program that uses pointer arithmetic to change the seat number at a position
-// entered by the user.
-// Display the seat numbers before and after the update.
-// Condition: Do not use arr[position] for updating the element.
+// Negative Value Converter
+// Create a class Number containing an integer value.
+// Overload the unary - operator so that applying it to an object creates a new object
+// containing the negative of its value.
+// For example:
+// Number n1 = 25;
+// Number n2 = -n1;
+// n1 = 25
+// n2 = -25
+// The original object must remain unchanged.
 
 #include<iostream>
-using namespace std ;
+using namespace std;
 
-int main() {
-    int seats[8] = {11, 22, 33,44, 55,66, 77, 88};
-    int *ptr =  seats;
-
-    cout << "Seat numbers before update: ";
-    for (int i = 0; i < 8; i++) {
-        cout << * (ptr + i) << " ";
+class Number{
+    int value;
+    public:
+    Number(int value=0){
+        this->value = value;
     }
-    cout << endl;
-
-    int pos, new_seat;
-    cout << "Enter seat index to update (0 to 7): ";
-    cin >> pos;
-    
-    cout << "Enter new seat number: ";
-    cin >> new_seat;
-
-    // Updating element without using array indexing arr[pos]
-    *(ptr + pos) = new_seat;
-
-    cout << "Seat numbers after update:  ";
-    for (int i = 0; i < 8; i++) {
-        cout << *(ptr + i) << " ";
+    Number operator-(){
+        Number temp;
+        temp.value = -value;
+        return temp;
     }
-    cout << endl;
+
+    void display(){
+        cout<<value<<endl;
+    }
+};
+
+int main(){
+    Number n1(25);
+    Number n2 = -n1;
+
+    cout<<"Original Number: ";
+    n1.display();
+
+    cout<<"Negative Number: ";
+    n2.display();
+     
 
     return 0;
 }
-
-

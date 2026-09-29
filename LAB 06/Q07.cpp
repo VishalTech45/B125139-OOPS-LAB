@@ -1,38 +1,38 @@
-// Message Inspector
-// A messaging application stores a sentence in a character array.
-// Using a character pointer, count:
-// • Number of uppercase letters.
-// • Number of lowercase letters.
-// • Number of spaces.
-// Traverse the sentence until the null character ’\0’
+// Date Equality Checker
+// Create a class Date containing day, month, and year.
+// Overload the == operator to determine whether two Date objects represent the same date.
+// For example:
+// Date 1: 15 08 2026
+// Date 2: 15 08 2026
+// Output: Both dates are equal.
+// The overloaded operator should return a Boolean result.
 
-#include<iostream>
-#include<string>
-using namespace std ;
+#include <iostream>
+using namespace std;
 
-int main(){
-    char msg[] = "Please Give me Good Marks" ;
-    char *ptr = msg ;
-    int cnt_upper = 0;
-    int cnt_lower = 0 ;
-    int cnt_space = 0 ;
-     while (*ptr != '\0') {
-        if (*ptr >= 'A' && *ptr <= 'Z') {
-            cnt_upper++;
-        } else if (*ptr >= 'a' && *ptr <= 'z') {
-            cnt_lower++;
-        } else if (*ptr == ' ') {
-            cnt_space++;
-        }
-        ptr++;
+class Date {
+    int day, month, year;
+
+public:
+    Date(int d, int m, int y) {
+        day = d;
+        month = m;
+        year = y;
     }
-    cout << "Sentence: " << msg << endl;
-    cout << "Uppercase letters: " << cnt_upper << endl;
-    cout << "Lowercase letters: " << cnt_lower << endl;
-    cout << "Spaces: " << cnt_space << endl;
+
+    bool operator==(Date d) {
+        return day == d.day && month == d.month && year == d.year;
+    }
+};
+
+int main() {
+    Date d1(15, 8, 2026);
+    Date d2(15, 8, 2026);
+
+    if (d1 == d2)
+        cout << "Both dates are equal." << endl;
+    else
+        cout << "Dates are not equal." << endl;
+
     return 0;
-
 }
- 
-
- 

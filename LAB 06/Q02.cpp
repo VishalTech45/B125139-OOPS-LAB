@@ -1,52 +1,59 @@
-// Digital Wallet Balance
-// A digital wallet stores the current balance of a user.
-// Create a pointer pointing to the balance. Using the pointer:
-// 1. Display the current balance.
-// 2. Add a specified amount.
-// 3. Deduct a specified amount.
-// 4. Display the final balance.
+// Complex Number Subtraction
+// Create a class Complex containing real and imaginary parts.
+// Overload the - operator to subtract two complex numbers.
+// For example:
+// C1 = 8 + 5i
+// C2 = 3 + 2i
+// C1 - C2 = 5 + 3i
+// Display the result in a proper complex-number format.
 
-#include <iostream>
+#include<iostream>
 using namespace std;
 
- void display_Balance(int* ptr) {
-    cout << "Current balance: " << *ptr << endl;
- }
+class Complex{
+    int real , img ;
+    public:  // access specifier
+    //Constructor
+    Complex(int real=0 , int img=0){
+        this->real = real ;
+        this->img = img ;
+    }
 
- void add_amount(int* ptr , int amount) {
-    *ptr += amount;  // Add the specified amount using the pointer
-    cout << "Amount added: " << amount << endl;
-    cout << "Amount after Addition of "<<amount <<" = "<<*ptr <<endl;
- }
-
- void deduct_amount(int* ptr , int amount) {
-    *ptr -= amount;  // Deduct the specified amount using the pointer
-    cout << "Amount deducted: " << amount << endl;
-    cout<<"Amount After deduction of "<<amount<<" = "<< *ptr <<endl;
- }
-
- int main(){
-    
-    int bal = 1000;  // Initial balance
-    int* ptr = &bal; // Pointer to the balance varible
-     
-    //call the function to display the balance
-    display_Balance(ptr);
+    Complex operator-(Complex c1){
+        Complex temp;
+        temp.real = real -c1.real ;
+        temp.img = img - c1.img ;
 
 
-    int add;
-    cout << "Enter the amount to add: ";
-    cin >> add;
-    // call the function to add the amount
-    add_amount(ptr, add);
+        return temp;
+    }
 
-    int deduct;
-    cout << "Enter the amount to deduct: ";
-    cin >> deduct;
-    // call the function to deduct the amount
-    deduct_amount(ptr, deduct);
+    void display(){
+        if(img>=0){
+             
+            cout<<real<<" + "<<img<<"i"<<endl;
+        }else{
+           
+            cout<<real<<" - "<<-img<<"i"<<endl;
+        }
+        cout<<endl;
+    }
+};
 
-    cout<<"Final balance: " << *ptr << endl;
+int main(){
+    Complex c1(2,5);
+    Complex c2(4,7);
+
+    Complex c3 = c1-c2 ;
+
+    cout<<"Complex Number 1 : "<<endl;
+    c1.display();
+
+    cout<<"Complex Number 2 : "<<endl;
+    c2.display();
+
+    cout<<"Complex Number 3 : "<<endl;
+    c3.display();
 
     return 0;
- }
+}

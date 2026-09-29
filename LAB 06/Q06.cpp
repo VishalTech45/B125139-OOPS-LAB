@@ -1,34 +1,55 @@
-// Grocery Price Scanner
-// A grocery store stores the prices of 7 products.
-// Write a function that receives:
-// • A pointer to the first price.
-// • The number of products.
-// Using pointer traversal, find and display the highest price.
-// Condition: Do not use array indexing inside the function.
+// Counter Increment
+// Create a class Counter containing an integer value.
+// Overload the increment operator to support both prefix and postfix forms:
+// ++c;
+// c++;
+// Both operations should increase the counter value by 1.
+// Display the value before and after each operation.
+// Hint: Prefix and postfix increment operators require different function signatures.
 
 #include<iostream>
-using namespace std ;
+using namespace std;
 
-void func(int *ptr , int no_of_prod){
-   int high_price =INT_MIN ;
-    for(int i = 0 ; i < no_of_prod ;i++){
-         if(high_price< *(ptr + i)){
-            high_price = *(ptr + i) ;
-         }
+class Counter{
+    int value;
+    public:
+    Counter(int value=0){
+        this->value = value;
     }
-    cout<<"\nHighest Price = "<<high_price ;
-}
+    // Postfix increment operator
+    Counter operator++(int){
+        Counter temp;
+        temp.value = value++;
+        return temp;
+    }
+    //prefix increment operator
+    Counter operator++(){
+        Counter temp;
+        temp.value = ++value;
+        return temp;
+    }
+    void display(){
+        cout<<value<<endl;
+    }
+};
 
 int main(){
-    int arr[7] ={20,40,100,80,99,60,120} ;
-    int *ptr = arr;
+    Counter c1(5);
 
-    cout<<"Price of products:";
-    for(int i = 0 ; i<7 ; i++){
-        cout<<*(ptr + i)<<" " ;
-    }
-   
-    func(arr , 7);
+    cout<<"Original Counter: ";
+    c1.display();
 
-    return 0 ;
+    cout<<"Postfix Increment: ";
+    Counter c2 = c1++;
+    c2.display();
+    cout<<"Counter after Postfix Increment: ";
+    c1.display();
+
+    cout<<"Prefix Increment: ";
+    Counter c3 = ++c1;
+    c3.display();
+    cout<<"Counter after Prefix Increment: ";
+    c1.display();
+
+    return 0;
 }

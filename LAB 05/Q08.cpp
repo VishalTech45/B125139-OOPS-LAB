@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cmath>
-
+using namespace std;
 // 1. Overloaded function: Count digits in an integer
 int count(int number) {
     if (number == 0) return 1;
     
     int digitCount = 0;
-    number = std::abs(number); // Handle negative numbers
+    number = abs(number); // Handle negative numbers
     
     while (number > 0) {
         number /= 10;
@@ -35,41 +35,41 @@ int count(const char arr[], int size, char target) {
 int main() {
     // --- 1. COUNT DIGITS IN AN INTEGER ---
     int num;
-    std::cout << "--- 1. Count Digits in an Integer ---\n";
-    std::cout << "Enter an integer: ";
-    std::cin >> num;
-    std::cout << "Number of digits in " << num << ": " << count(num) << "\n\n";
+    cout << "--- 1. Count Digits in an Integer ---\n";
+    cout << "Enter an integer: ";
+    cin >> num;
+    cout << "Number of digits in " << num << ": " << count(num) << "\n\n";
 
     // --- 2. COUNT ELEMENTS IN AN INTEGER ARRAY ---
     int intSize;
-    std::cout << "--- 2. Count Elements in an Integer Array ---\n";
-    std::cout << "Enter the number of elements: ";
-    std::cin >> intSize;
+    cout << "--- 2. Count Elements in an Integer Array ---\n";
+    cout << "Enter the number of elements: ";
+    cin >> intSize;
 
     int intArray[intSize];
-    std::cout << "Enter " << intSize << " integers: ";
+    cout << "Enter " << intSize << " integers: ";
     for (int i = 0; i < intSize; ++i) {
-        std::cin >> intArray[i];
+        cin >> intArray[i];
     }
-    std::cout << "Total elements in the array: " << count(intArray, intSize) << "\n\n";
+    cout << "Total elements in the array: " << count(intArray, intSize) << "\n\n";
 
     // --- 3. COUNT CHARACTER OCCURRENCES ---
     int charSize;
-    std::cout << "--- 3. Count Character Occurrences ---\n";
-    std::cout << "Enter the size of the character array: ";
-    std::cin >> charSize;
+    cout << "--- 3. Count Character Occurrences ---\n";
+    cout << "Enter the size of the character array: ";
+    cin >> charSize;
 
     char charArray[charSize];
-    std::cout << "Enter " << charSize << " characters: ";
+    cout << "Enter " << charSize << " characters: ";
     for (int i = 0; i < charSize; ++i) {
-        std::cin >> charArray[i];
+        cin >> charArray[i];
     }
 
     char targetChar;
-    std::cout << "Enter character to count: ";
-    std::cin >> targetChar;
+    cout << "Enter character to count: ";
+    cin >> targetChar;
 
-    std::cout << "Occurrences of '" << targetChar << "': "<< count(charArray, charSize, targetChar) << "\n";
+    cout << "Occurrences of '" << targetChar << "': "<< count(charArray, charSize, targetChar) << "\n";
 
     return 0;
 }

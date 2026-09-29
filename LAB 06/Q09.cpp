@@ -1,49 +1,40 @@
-// Parking Slot Monitor
-// A parking system does not know in advance how many parking slots it needs to store.
-// Write a program that:
-// 1. Dynamically allocates memory for nparking slot statuses.
-// 2. Uses 0 for available and 1 for occupied.
-// 3. Counts available and occupied slots using a pointer.
-// 4. Releases the dynamically allocated memory.
-
-
+// Temperature Comparison
+// Create a class Temperature containing temperature in Celsius.
+// Overload both the < and > operators to compare two Temperature objects.
+// Use these overloaded operators to determine whether the first temperature is lower than,
+// higher than, or equal to the second temperature.
+// Hint: The overloaded comparison operators should return Boolean values.
 
 #include <iostream>
 using namespace std;
 
+class Temperature {
+    float celsius;
+
+public:
+    Temperature(float c = 0) {
+        celsius = c;
+    }
+
+    bool operator<(Temperature t) {
+        return celsius < t.celsius;
+    }
+
+    bool operator>(Temperature t) {
+        return celsius > t.celsius;
+    }
+};
+
 int main() {
-    int n;
-    cout << "Enter total number of parking slots: ";
-    cin >> n;
+    Temperature t1(25);
+    Temperature t2(30);
 
-    // 1. Dynamically allocate memory
-    int *slots = new int[n];
-
-    // 2. 0 for available, 1 for occupied
-    cout << "Enter status for each slot (0 = Available, 1 = Occupied):" << endl;
-    int *ptr = slots;
-    for (int i = 0; i < n; i++) {
-        cin >> *ptr;
-        ptr++;
-    }
-
-    // 3. Count available and occupied slots using pointer
-    int avb_count = 0, occ_count = 0;
-    ptr = slots; // Reset pointer to start of allocated memory
-    for (int i = 0; i < n; i++) {
-        if (*ptr == 0) {
-            avb_count++;
-        } else if (*ptr == 1) {
-            occ_count++;
-        }
-        ptr++;
-    }
-
-    cout << "Total Available Slots: " << avb_count << endl;
-    cout << "Total Occupied Slots:  " << occ_count << endl;
-
-    // 4. Release dynamically allocated memory
-    delete[] slots;
+    if (t1 < t2)
+        cout << "First temperature is lower." << endl;
+    else if (t1 > t2)
+        cout << "First temperature is higher." << endl;
+    else
+        cout << "Both temperatures are equal." << endl;
 
     return 0;
 }
